@@ -1,0 +1,17 @@
+{
+  "_comment": "Пример манифеста для export.py: как из личной мастерской собирать открытый снапшот. Положите рядом как manifest.json и поправьте пути.",
+  "root": "/path/to/private-workshop",
+  "dest": "/path/to/open-repo",
+  "overlay": "export/overlay",
+  "binary_allow": [],
+  "entries": [
+    {"src": ".claude/skills/my-writer", "dst": ".claude/skills/write-as-author",
+     "exclude": ["references/private-*.md", "**/__pycache__/**"]},
+    {"src": "voice/registers", "exclude": ["messages.md"]},
+    {"src": "tools/trend-watch", "exclude": [".env", "**/__pycache__/**"]},
+    {"src": "content/README.md"},
+    {"src": "content/reports", "exclude": ["*-private-*"]},
+    {"src": "studio", "tracked": true,
+     "exclude": ["deploy/**", "public/media/**", ".env*", "*.tsbuildinfo", "next-env.d.ts"]}
+  ]
+}

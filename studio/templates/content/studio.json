@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "title": "Контентная студия",
+  "author": { "name": "Автор", "handle": "author", "initial": "А" },
+  "git": { "committable": ["content/", "voice/", ".claude/skills/"] }
+}

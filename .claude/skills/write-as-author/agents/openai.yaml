@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write as Author"
+  short_description: "Писать и редактировать тексты голосом автора"
+  default_prompt: "Используй $write-as-author, чтобы написать Telegram-пост по моим заметкам в голосе автора."

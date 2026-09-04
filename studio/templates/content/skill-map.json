@@ -1,0 +1,247 @@
+{
+  "version": 2,
+  "note": "Манифест карты скилла: какие файлы составляют голос автора и кто что читает. Структура правится руками, из интерфейса меняется только тело файлов. Узлы здесь без layout — студия раскладывает их сама по группам в колонки; чтобы зафиксировать композицию, добавьте узлу layout: { x, y } и при желании captions на холст.",
+  "groups": [
+    { "id": "voice", "label": "Голос" },
+    { "id": "write", "label": "write-as-author — автор" },
+    { "id": "correct", "label": "corrector — корректор" },
+    { "id": "corpus", "label": "Корпус и регистры" }
+  ],
+  "coveredDirs": [
+    ".claude/skills/write-as-author",
+    ".claude/skills/corrector"
+  ],
+  "nodes": [
+    {
+      "id": "canon",
+      "type": "canon",
+      "group": "voice",
+      "label": "i_am_just_a_text_file",
+      "path": "voice/i_am_just_a_text_file.md",
+      "summary": "Первоисточник: кто автор, во что верит, для кого пишет, как должен звучать голос. Всё остальное на карте — производные от этого файла."
+    },
+    {
+      "id": "register-telegram",
+      "type": "register",
+      "group": "voice",
+      "label": "telegram",
+      "path": "voice/registers/telegram.md",
+      "summary": "Регистр канала в Telegram: чем он отличается от базового голоса."
+    },
+    {
+      "id": "register-social",
+      "type": "register",
+      "group": "voice",
+      "label": "social",
+      "path": "voice/registers/social.md",
+      "summary": "Короткие соцсети: Threads, X, LinkedIn. Самостоятельный пост, а не обрезок канала."
+    },
+    {
+      "id": "register-essay",
+      "type": "register",
+      "group": "voice",
+      "label": "essay",
+      "path": "voice/registers/essay.md",
+      "summary": "Эссе и лонгриды: меньше разговорного, больше структуры."
+    },
+    {
+      "id": "register-vc",
+      "type": "register",
+      "group": "voice",
+      "label": "vc",
+      "path": "voice/registers/vc.md",
+      "summary": "vc.ru: кейс с цифрами, заголовок под ленту, ожидания комментаторов."
+    },
+    {
+      "id": "register-habr",
+      "type": "register",
+      "group": "voice",
+      "label": "habr",
+      "path": "voice/registers/habr.md",
+      "summary": "Хабр: техническая аудитория, доказательства важнее интонации."
+    },
+    {
+      "id": "register-dzen",
+      "type": "register",
+      "group": "voice",
+      "label": "dzen",
+      "path": "voice/registers/dzen.md",
+      "summary": "Дзен: широкая аудитория, объяснять с нуля, без внутренних терминов."
+    },
+    {
+      "id": "register-dtf",
+      "type": "register",
+      "group": "voice",
+      "label": "dtf",
+      "path": "voice/registers/dtf.md",
+      "summary": "DTF: сообщество с собственным юмором и дистанцией к рекламе."
+    },
+    {
+      "id": "register-tenchat",
+      "type": "register",
+      "group": "voice",
+      "label": "tenchat",
+      "path": "voice/registers/tenchat.md",
+      "summary": "TenChat: деловая сеть, короткие абзацы, прямая польза в первом экране."
+    },
+    {
+      "id": "write-as-author",
+      "type": "skill",
+      "group": "write",
+      "label": "write-as-author",
+      "path": ".claude/skills/write-as-author/SKILL.md",
+      "summary": "Автор. Черновик из материалов, редактура, адаптация под площадку, синтез. Читает выжимку голоса всегда, регистры — по площадке, остальное — по задаче."
+    },
+    {
+      "id": "voice-core",
+      "type": "reference",
+      "group": "write",
+      "label": "voice-core",
+      "path": "voice/voice-core.md",
+      "summary": "Рабочая выжимка канона, которую скилл читает всегда: позиция, отношения с читателем, интонация, что запрещено."
+    },
+    {
+      "id": "channel-profile",
+      "type": "reference",
+      "group": "write",
+      "label": "channel-profile",
+      "path": "voice/channel-profile.md",
+      "summary": "Стиль-профиль канала и всё личное, чего скилл про автора не знает: границы тем, устаревшие приёмы. При расхождении частот уступает отпечатку."
+    },
+    {
+      "id": "examples",
+      "type": "reference",
+      "group": "write",
+      "label": "examples",
+      "path": "voice/examples.md",
+      "summary": "Калибровочные примеры с разбором, почему работает, и образцы «так не писать»."
+    },
+    {
+      "id": "formats",
+      "type": "reference",
+      "group": "write",
+      "label": "formats",
+      "path": ".claude/skills/write-as-author/references/formats.md",
+      "summary": "Форматы площадок: длина, структура, правила заголовков и призывов к действию."
+    },
+    {
+      "id": "collaboration-and-safety",
+      "type": "reference",
+      "group": "write",
+      "label": "collaboration-and-safety",
+      "path": ".claude/skills/write-as-author/references/collaboration-and-safety.md",
+      "summary": "Иерархия источников, проверка фактов, приватные истории и правило: готовый текст — ещё не разрешение публиковать."
+    },
+    {
+      "id": "critic-loop",
+      "type": "reference",
+      "group": "write",
+      "label": "critic-loop",
+      "path": ".claude/skills/write-as-author/references/critic-loop.md",
+      "summary": "Независимый критик отдельным субагентом: две оценки по 10, порог 9/9, не больше трёх версий."
+    },
+    {
+      "id": "corrector",
+      "type": "skill",
+      "group": "correct",
+      "label": "corrector",
+      "path": ".claude/skills/corrector/SKILL.md",
+      "summary": "Корректор, а не автор: механическая проверка линтером, рубрика, чистка нейросетевого налёта, возврат недостающих маркеров, проверка что содержание не поехало."
+    },
+    {
+      "id": "fingerprint",
+      "type": "reference",
+      "group": "correct",
+      "label": "fingerprint",
+      "path": "voice/fingerprint.md",
+      "summary": "Отпечаток голоса, снятый по корпусу: структура поста, зачины, ритм, лексика. Если корпус и отпечаток расходятся — пересчитывают по корпусу."
+    },
+    {
+      "id": "anti-patterns",
+      "type": "reference",
+      "group": "correct",
+      "label": "anti-patterns",
+      "path": ".claude/skills/corrector/references/anti-patterns.md",
+      "summary": "Что вычищать, с частотами по корпусу, и какие маркеры автора обязаны остаться."
+    },
+    {
+      "id": "rubrics",
+      "type": "reference",
+      "group": "correct",
+      "label": "rubrics",
+      "path": ".claude/skills/corrector/references/rubrics.md",
+      "summary": "Рубрики постов канала и логика промо-блока: место, порядок, чего избегать."
+    },
+    {
+      "id": "lint",
+      "type": "script",
+      "group": "correct",
+      "label": "lint.py",
+      "path": ".claude/skills/corrector/scripts/lint.py",
+      "summary": "Механический линтер без зависимостей: считает маркеры и выдаёт stop / warn / ok. Вердикта о качестве не выносит."
+    },
+    {
+      "id": "calibrate",
+      "type": "script",
+      "group": "correct",
+      "label": "calibrate.py",
+      "path": ".claude/skills/corrector/scripts/calibrate.py",
+      "summary": "Калибровка порогов линтера по корпусу: считает те же маркеры и пишет thresholds.json с обоснованием."
+    },
+    {
+      "id": "thresholds",
+      "type": "reference",
+      "group": "correct",
+      "label": "thresholds.json",
+      "path": "voice/thresholds.json",
+      "summary": "Пороги линтера, посчитанные по корпусу автора. После обновления корпуса пересчитываются calibrate.py."
+    },
+    {
+      "id": "corpus",
+      "type": "corpus",
+      "group": "corpus",
+      "label": "корпус канала",
+      "path": "voice/corpus/channel.md",
+      "summary": "Реальные посты автора. Самый свежий источник частот: спорное сверяют по нему, а не по описаниям."
+    }
+  ],
+  "edges": [
+    { "from": "voice-core", "to": "canon", "kind": "derives", "label": "выжимка из" },
+    { "from": "write-as-author", "to": "voice-core", "kind": "always", "step": 1, "label": "читает всегда" },
+    { "from": "write-as-author", "to": "canon", "kind": "deep", "step": 1, "label": "если вопрос о позиции" },
+    { "from": "write-as-author", "to": "register-telegram", "kind": "platform", "step": 2, "label": "канал" },
+    { "from": "write-as-author", "to": "register-social", "kind": "platform", "step": 2, "label": "Threads / X / LinkedIn" },
+    { "from": "write-as-author", "to": "register-essay", "kind": "platform", "step": 2, "label": "лонгрид" },
+    { "from": "write-as-author", "to": "register-vc", "kind": "platform", "step": 2, "label": "vc.ru" },
+    { "from": "write-as-author", "to": "register-habr", "kind": "platform", "step": 2, "label": "Хабр" },
+    { "from": "write-as-author", "to": "register-dzen", "kind": "platform", "step": 2, "label": "Дзен" },
+    { "from": "write-as-author", "to": "register-dtf", "kind": "platform", "step": 2, "label": "DTF" },
+    { "from": "write-as-author", "to": "register-tenchat", "kind": "platform", "step": 2, "label": "TenChat" },
+    { "from": "write-as-author", "to": "formats", "kind": "conditional", "step": 3 },
+    { "from": "write-as-author", "to": "channel-profile", "kind": "conditional", "step": 3 },
+    { "from": "write-as-author", "to": "collaboration-and-safety", "kind": "conditional", "step": 3 },
+    { "from": "write-as-author", "to": "examples", "kind": "conditional", "step": 3 },
+    { "from": "write-as-author", "to": "corpus", "kind": "verify", "step": 4, "label": "сверяется перед выдачей" },
+    { "from": "write-as-author", "to": "critic-loop", "kind": "subagent", "step": 5, "label": "критик, порог 9/9" },
+    { "from": "write-as-author", "to": "corrector", "kind": "handoff", "step": 6, "label": "готовый черновик → вычитка" },
+    { "from": "corrector", "to": "lint", "kind": "step", "step": 1, "label": "механика" },
+    { "from": "corrector", "to": "rubrics", "kind": "step", "step": 2, "label": "рубрика" },
+    { "from": "corrector", "to": "anti-patterns", "kind": "step", "step": 3, "label": "чистка ИИ-налёта" },
+    { "from": "corrector", "to": "fingerprint", "kind": "step", "step": 4, "label": "вернуть маркеры" },
+    { "from": "corrector", "to": "voice-core", "kind": "conditional", "label": "если вопрос о позиции" },
+    { "from": "corrector", "to": "corpus", "kind": "verify", "label": "живые примеры" },
+    { "from": "corpus", "to": "fingerprint", "kind": "precedence", "label": "свежее: при расхождении пересчитывают отпечаток" },
+    { "from": "channel-profile", "to": "fingerprint", "kind": "precedence", "label": "уступает отпечатку" },
+    { "from": "register-telegram", "to": "canon", "kind": "derives", "label": "отличия от базового голоса" },
+    { "from": "register-social", "to": "canon", "kind": "derives", "label": "отличия от базового голоса" },
+    { "from": "register-essay", "to": "canon", "kind": "derives", "label": "отличия от базового голоса" },
+    { "from": "register-vc", "to": "canon", "kind": "derives", "label": "отличия от базового голоса" },
+    { "from": "register-habr", "to": "canon", "kind": "derives", "label": "отличия от базового голоса" },
+    { "from": "register-dzen", "to": "canon", "kind": "derives", "label": "отличия от базового голоса" },
+    { "from": "register-dtf", "to": "canon", "kind": "derives", "label": "отличия от базового голоса" },
+    { "from": "register-tenchat", "to": "canon", "kind": "derives", "label": "отличия от базового голоса" },
+    { "from": "lint", "to": "thresholds", "kind": "always", "label": "читает пороги" },
+    { "from": "calibrate", "to": "thresholds", "kind": "derives", "label": "генерирует" },
+    { "from": "calibrate", "to": "corpus", "kind": "verify", "label": "считает по корпусу" }
+  ]
+}

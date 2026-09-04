@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [],
+    "deny": ["Bash", "Read", "Write", "Edit", "WebFetch", "WebSearch", "Glob", "Grep", "Task"]
+  }
+}

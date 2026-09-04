@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "title": "Контентная студия",
+  "author": { "name": "Матвей", "handle": "msuharev", "initial": "М" },
+  "git": { "committable": ["content/", "voice/", ".claude/skills/"] }
+}

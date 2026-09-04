@@ -1,0 +1,30 @@
+# Данные, которые не должны попадать в git
+.data/
+**/data/
+**/media/
+!voice/corpus/
+*.session
+*.session-journal
+
+# Секреты и локальные настройки
+.env
+.env.*
+!.env.example
+*.key
+export/stoplist.local.txt
+export/manifest.local.json
+
+# Сборки и зависимости
+node_modules/
+.next/
+*.tsbuildinfo
+next-env.d.ts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Мусор
+*.log
+.DS_Store
+.claude/settings.local.json

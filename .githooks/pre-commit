@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Стоп-лист по файлам в индексе. Включается один раз:
+#   git config core.hooksPath .githooks
+# Свои имена и хосты - в export/stoplist.local.txt (в git не попадает).
+set -euo pipefail
+ROOT="$(git rev-parse --show-toplevel)"
+ARGS=(--staged --stoplist "$ROOT/export/stoplist.example.txt" --binary-allow-file "$ROOT/export/binary-allow.txt")
+[ -f "$ROOT/export/stoplist.local.txt" ] && ARGS+=(--stoplist "$ROOT/export/stoplist.local.txt")
+python3 "$ROOT/export/check.py" "$ROOT" "${ARGS[@]}"

@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Светлая палитра — база. Тёмная переопределяет только токены. */
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --surface-2: #f4f2ee;
+  --border: #e4e0d8;
+  --text: #1c1a17;
+  --muted: #6f6a61;
+  --accent: #9a5b2c;
+  --accent-soft: #f3e7dc;
+  --danger: #a33a2a;
+  --danger-soft: #f7e4e0;
+  --warn: #8a6d1f;
+  --warn-soft: #f7efd8;
+  --ok: #3f6b46;
+  --ok-soft: #e3efe4;
+
+  /* Шкала графиков: один тон, четыре ступени. Номер означает силу акцента,
+     а не светлоту: chart-1 самая слабая, chart-4 самая сильная. На светлом
+     сильная ступень темнее фона, на тёмном светлее — поэтому в тёмной теме
+     значения идут в обратном порядке, а смысл номера сохраняется.
+
+     Разноцветная палитра из токенов интерфейса не годится: коричневый акцент
+     и зелёный ok сливаются при протанопии (проверено валидатором, ΔE 3.2).
+     Ступени ниже проходят все проверки: монотонность, разрыв ΔL ≥ 0.06,
+     контраст слабого конца к поверхности 2.14:1, один тон (разброс 11°). */
+  --chart-1: #d9a877;
+  --chart-2: #c07f42;
+  --chart-3: #9a5b2c;
+  --chart-4: #6b3c18;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14130f;
+    --surface: #1c1a16;
+    --surface-2: #232019;
+    --border: #34302a;
+    --text: #eae6df;
+    --muted: #9b9488;
+    --accent: #d99a63;
+    --accent-soft: #33261a;
+    --danger: #e08a78;
+    --danger-soft: #38211c;
+    --warn: #d9bb6a;
+    --warn-soft: #332b16;
+    --ok: #8fc09a;
+    --ok-soft: #1e2c20;
+
+    /* Тёмная шкала подобрана заново под тёмную поверхность, а не получена
+       переворотом светлой: контраст слабого конца 2.55:1 к #1c1a16.
+       Порядок обратный светлому — сильная ступень здесь самая светлая. */
+    --chart-1: #7a5230;
+    --chart-2: #b0743c;
+    --chart-3: #d99a63;
+    --chart-4: #f2cfa4;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+
+  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif;
+  --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+/* Тексты постов читаются как текст, а не как интерфейс. */
+.prose-post {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.prose-post p {
+  margin-bottom: 1rem;
+}
+
+.prose-post h1,
+.prose-post h2,
+.prose-post h3 {
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.prose-post ul,
+.prose-post ol {
+  margin: 0 0 1rem 1.25rem;
+  list-style: revert;
+}
+
+.prose-post code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--surface-2);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+.prose-post a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Широкое содержимое прокручивается внутри себя, а не растягивает страницу. */
+.scroll-x {
+  overflow-x: auto;
+}
