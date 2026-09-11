@@ -91,4 +91,7 @@ canon, their messages, other people's posts from measurements) never gets here b
 construction. The export tooling is included so you can keep yours the same way: private
 in one repo, public in another.
 
+How the whole thing works, with numbers and the seams that don't hold - the talk deck
+from 4 September 2026: **https://hegai.net/p/kontent-zavod** (27 slides, in Russian).
+
 MIT license.
