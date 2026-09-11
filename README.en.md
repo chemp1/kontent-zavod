@@ -29,7 +29,7 @@ platform registers are Russian; the method and the tooling are language-agnostic
 ## Quick start
 
 ```bash
-git clone <this repo> && cd kontent-zavod
+git clone https://github.com/chemp1/kontent-zavod.git && cd kontent-zavod
 
 # linter on two drafts by the fictional author: a live one and a "written by an AI in general" one
 python3 .claude/skills/corrector/scripts/lint.py voice/corpus/samples/draft-ok.md

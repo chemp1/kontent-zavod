@@ -24,7 +24,7 @@
 ## Быстрый старт
 
 ```bash
-git clone <этот репо> && cd kontent-zavod
+git clone https://github.com/chemp1/kontent-zavod.git && cd kontent-zavod
 
 # линтер на двух черновиках вымышленного автора: живой и «написанный нейросетью вообще»
 python3 .claude/skills/corrector/scripts/lint.py voice/corpus/samples/draft-ok.md
